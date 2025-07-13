@@ -37,6 +37,9 @@ void _initAuth() {
 
   serviceLocator.registerFactory(() => UserSignIn(serviceLocator()));
 
+  serviceLocator.registerFactory(() => UserSignOut(serviceLocator()));
+
+
   serviceLocator.registerFactory(() => CurrentUser(serviceLocator()));
 
   serviceLocator.registerLazySingleton(
@@ -45,6 +48,7 @@ void _initAuth() {
       userSignIn: serviceLocator(),
       currentUser: serviceLocator(),
       appUserCubit: serviceLocator(),
+      userSignout: serviceLocator()
     ),
   );
 }

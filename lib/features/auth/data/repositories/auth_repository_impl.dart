@@ -1,3 +1,4 @@
+import 'package:blog_app/core/constants/constants.dart';
 import 'package:blog_app/core/error/exception.dart';
 import 'package:blog_app/core/error/failiures.dart';
 import 'package:blog_app/core/network/internet_connection_checker.dart';
@@ -78,6 +79,16 @@ class AuthRepositoryImpl implements AuthRepository {
       return right(user);
     } on ServerException catch (e) {
       return left(Failiure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failiure, String>> signOutUser() async {
+    try {
+      await remoteDataSources.signOut();
+      return right(Constants.userLoggedOutMessage);
+    } on ServerException catch (e) {
+      return left(Failiure(e.message));
     }
   }
 }

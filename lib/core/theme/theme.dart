@@ -36,5 +36,20 @@ class AppTheme {
     snackBarTheme: SnackBarThemeData(
       backgroundColor: ThemeData.dark().snackBarTheme.backgroundColor,
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty<Color?>.fromMap(
+          <WidgetStatesConstraint, Color?>{
+            WidgetState.error: AppPallete.errorColor,
+            WidgetState.hovered & WidgetState.focused: AppPallete.errorColor,
+            WidgetState.focused: AppPallete.errorColor,
+            ~WidgetState.disabled: AppPallete.errorColor,
+          },
+        ),
+        padding: WidgetStateProperty.all(
+          const EdgeInsets.symmetric(horizontal: 24.0),
+        ),
+      ),
+    ),
   );
 }

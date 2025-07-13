@@ -53,7 +53,7 @@ class _SignUpPageState extends State<SignUpPage> {
           listener: (context, state) {
             if (state is AuthFailiure) {
               showSnackBar(context, state.message);
-            }else if (state is AuthSuccess) {
+            } else if (state is AuthSuccess) {
               Navigator.pushAndRemoveUntil(
                 context,
                 BlogPage.route(),
@@ -65,59 +65,64 @@ class _SignUpPageState extends State<SignUpPage> {
             if (state is AuthLoading) {
               return const Loader();
             }
-            return Form(
-              key: formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Sign up.',
-                    style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 30),
-                  AuthField(
-                    hintText: 'Name',
-                    textEditingController: nameController,
-                  ),
-                  SizedBox(height: 15),
-                  AuthField(
-                    hintText: 'Email',
-                    textEditingController: emailController,
-                  ),
-                  SizedBox(height: 15),
-                  AuthField(
-                    hintText: 'Password',
-                    textEditingController: passwordController,
-                    isPass: true,
-                  ),
-                  SizedBox(height: 20),
-                  AuthGradientButton(
-                    buttonText: 'Sign Up',
-                    onPressed: onPressed,
-                  ),
-                  SizedBox(height: 15),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context, LogInPage.route());
-                    },
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Already have an account? ',
-                        style: Theme.of(context).textTheme.titleMedium,
-                        children: [
-                          TextSpan(
-                            text: 'Log In.',
-                            style: Theme.of(context).textTheme.titleMedium
-                                ?.copyWith(
-                                  color: AppPallete.gradient2,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                          ),
-                        ],
+            return SingleChildScrollView(
+              child: Form(
+                key: formKey,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Sign up.',
+                      style: TextStyle(
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 30),
+                    AuthField(
+                      hintText: 'Name',
+                      textEditingController: nameController,
+                    ),
+                    SizedBox(height: 15),
+                    AuthField(
+                      hintText: 'Email',
+                      textEditingController: emailController,
+                    ),
+                    SizedBox(height: 15),
+                    AuthField(
+                      hintText: 'Password',
+                      textEditingController: passwordController,
+                      isPass: true,
+                    ),
+                    SizedBox(height: 20),
+                    AuthGradientButton(
+                      buttonText: 'Sign Up',
+                      onPressed: onPressed,
+                    ),
+                    SizedBox(height: 15),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, LogInPage.route());
+                      },
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Already have an account? ',
+                          style: Theme.of(context).textTheme.titleMedium,
+                          children: [
+                            TextSpan(
+                              text: 'Log In.',
+                              style: Theme.of(context).textTheme.titleMedium
+                                  ?.copyWith(
+                                    color: AppPallete.gradient2,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },

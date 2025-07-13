@@ -90,22 +90,22 @@ A modern blog application built with Flutter, powered by Supabase for a robust b
 
 ## 📂 Project Structure 
 lib/
-├── core/
-│   ├── common/         # Reusable widgets (e.g., Loader), shared utilities
-│   ├── errors/         # Custom exception and failure handling
-│   ├── usecase/        # Base classes for domain use cases (e.g., abstract Usecase)
-│   └── theme/          # Application-wide theme definitions (e.g., AppPallete)
-├── features/
-│   ├── auth/           # Authentication module (sign-up, sign-in, user management)
-│   │   ├── data/       # Data layer (datasources, models)
-│   │   ├── domain/     # Domain layer (entities, repositories, usecases)
-│   │   └── presentation/# Presentation layer (bloc, UI pages)
-│   └── blog/           # Blog module (create, view, list blog posts)
-│       ├── data/       # Data layer (datasources, models)
-│       ├── domain/     # Domain layer (entities, repositories, usecases)
-│       └── presentation/# Presentation layer (bloc, UI pages)
-├── main.dart           # Application entry point, global configurations (Supabase, Hive)
-└── secrets/            # Git-ignored directory for sensitive API keys or environment variables
+├── core/  
+│   ├── common/         # Reusable widgets (e.g., Loader), shared utilities  
+│   ├── errors/         # Custom exception and failure handling  
+│   ├── usecase/        # Base classes for domain use cases (e.g., abstract Usecase)  
+│   └── theme/          # Application-wide theme definitions (e.g., AppPallete)  
+├── features/  
+│   ├── auth/           # Authentication module (sign-up, sign-in, user management)  
+│   │   ├── data/       # Data layer (datasources, models)     
+│   │   ├── domain/     # Domain layer (entities, repositories, usecases)     
+│   │   └── presentation/# Presentation layer (bloc, UI pages)     
+│   └── blog/           # Blog module (create, view, list blog posts)     
+│       ├── data/       # Data layer (datasources, models)     
+│       ├── domain/     # Domain layer (entities, repositories, usecases)     
+│       └── presentation/# Presentation layer (bloc, UI pages)     
+├── main.dart           # Application entry point, global configurations (Supabase, Hive)     
+└── secrets/            # Git-ignored directory for sensitive API keys or environment variables     
 
 
 ---

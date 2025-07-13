@@ -18,3 +18,8 @@ final class AuthSuccess extends AuthState {
   final User user;
   const AuthSuccess(this.user);
 }
+
+final class AuthSuccessSignOut extends AuthState {
+  final String text;
+  const AuthSuccessSignOut(this.text);
+}
