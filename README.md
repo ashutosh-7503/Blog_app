@@ -2,6 +2,8 @@
 
 A modern blog application built with Flutter, powered by Supabase for a robust backend, and designed for a smooth user experience.
 
+![image_alt](https://github.com/ashutosh-7503/Blog_app/blob/main/blog-app-prototype.png?raw=true)
+
 ---
 
 ## ✨ Features
