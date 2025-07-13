@@ -89,7 +89,7 @@ A modern blog application built with Flutter, powered by Supabase for a robust b
 ---
 
 ## 📂 Project Structure 
-lib/
+lib/  
 ├── core/  
 │   ├── common/  
 │   ├── errors/  
